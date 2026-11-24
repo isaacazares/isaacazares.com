@@ -77,6 +77,20 @@ nav.menu .close{position:absolute;top:8px;right:30px;font:300 40px var(--light);
 .arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:20px;cursor:pointer;z-index:2}
 .arrow.l{left:-12px}.arrow.r{right:-12px}
 
+/* Credits (IMDb) */
+.credits{margin:90px 120px 0 42px}
+.credits .label{padding-left:6px;margin-right:0}
+.clist{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
+.clist li{border-top:1px solid rgba(255,255,255,.28)}
+.clist a{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:16px 4px 18px;text-decoration:none;transition:background .2s}
+.clist a:hover{background:rgba(255,255,255,.07)}
+.clist .yr{font-size:14px;color:#c7c7c7;padding-top:4px}
+.clist .t{font:800 21px/1.25 var(--heavy)}
+.clist .r{display:block;font-size:14px;color:#c7c7c7;margin-top:4px}
+.imdb-all{display:inline-flex;align-items:center;gap:12px;margin-top:34px;font-size:16px;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:4px}
+.imdb-all:hover{opacity:.7}
+.imdb-all svg{width:42px;height:21px}
+
 /* About */
 .about{position:relative;padding:70px 0 40px}
 .about .stage{position:relative;margin-top:60px;min-height:740px}
@@ -88,14 +102,6 @@ nav.menu .close{position:absolute;top:8px;right:30px;font:300 40px var(--light);
 .about .contact{padding:40px 0 0 107px;margin:0;max-width:none;position:relative}
 .contact a{text-decoration:none}
 
-/* Newsletter */
-.news{padding:70px 104px 40px}
-.news h3{font:800 21px var(--heavy);text-decoration:underline;margin:0 0 18px}
-.news form{display:flex;gap:16px;align-items:flex-end;max-width:840px}
-.news input{flex:1;background:none;border:0;border-bottom:1px solid #fff;color:#fff;font:300 16px var(--light);padding:10px 4px}
-.news input::placeholder{color:#c7c7c7}
-.news button{background:#fff;color:#000;border:0;font:300 14px var(--light);padding:9px 20px;cursor:pointer;white-space:nowrap}
-.news .ok{font-size:14px;margin-top:12px;min-height:20px}
 footer{padding:20px 104px 50px;font-size:14px}
 
 @media(max-width:760px){
@@ -107,14 +113,15 @@ footer{padding:20px 104px 50px;font-size:14px}
  .player,.strip{margin-left:16px;margin-right:50px}
  .player{margin-top:50px}
  .thumb{flex-basis:220px;height:128px}
+ .credits{margin:60px 50px 0 16px}
+ .clist{grid-template-columns:minmax(0,1fr)}
+ .clist .t{font-size:18px}
  .about .stage{min-height:0;margin-top:30px}
  .about .photo{top:70px;bottom:-20px;height:auto}
  .about .photo::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
  .about .body{padding:20px 50px 0 24px}
  .about h3{margin-bottom:30px}
  .about .contact{padding:40px 50px 0 24px}
- .news{padding:60px 50px 30px 24px}
- .news form{flex-direction:column;align-items:stretch}
  footer{padding:20px 24px 40px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -134,6 +141,7 @@ footer{padding:20px 104px 50px;font-size:14px}
   <button class="close" id="close" aria-label="Cerrar menú">×</button>
   <a href="#top">Home</a>
   <a href="#featuredwork">Featured Work</a>
+  <a href="#credits">Credits</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -167,6 +175,22 @@ footer{padding:20px 104px 50px;font-size:14px}
       <div class="thumbs" id="thumbs"></div>
       <button class="arrow r" id="next" aria-label="Siguiente">›</button>
     </div>
+    <div class="credits" id="credits">
+      <div class="label">Credits</div>
+      <ol class="clist">
+        <li><a href="https://www.imdb.com/title/tt36150990/" target="_blank" rel="noopener"><span class="yr">2025</span><span><span class="t">Garnachas: Glorious Street Food!</span><span class="r">Editor · Miniseries</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt28235034/" target="_blank" rel="noopener"><span class="yr">2025</span><span><span class="t">Juan Gabriel: Debo, puedo y quiero</span><span class="r">Post-production Assistant · Series</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt28657881/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">La oscuridad de La Luz del Mundo</span><span class="r">Assistant Editor · Film</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt30222235/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">Divo o Muerto</span><span class="r">Editor · Series</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt33463488/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">The Place Man</span><span class="r">Editor · Short</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt21448384/" target="_blank" rel="noopener"><span class="yr">2022</span><span><span class="t">Club América vs. Club América</span><span class="r">Assistant Editor · Series</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt16539880/" target="_blank" rel="noopener"><span class="yr">2022</span><span><span class="t">La Divina Gula</span><span class="r">Second Assistant Editor · Series</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt13991372/" target="_blank" rel="noopener"><span class="yr">2021</span><span><span class="t">Los Plebes</span><span class="r">Additional Editor · Film</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt13206564/" target="_blank" rel="noopener"><span class="yr">2020</span><span><span class="t">Las tres muertes de Marisela Escobedo</span><span class="r">Additional Assistant Editor · Film</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt12571604/" target="_blank" rel="noopener"><span class="yr">2018</span><span><span class="t">Explorer Investigation</span><span class="r">Assistant Editor · Series</span></span></a></li>
+      </ol>
+      <a class="imdb-all" href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener"><svg viewBox="0 0 64 32" aria-hidden="true"><rect width="64" height="32" rx="4" fill="#F5C518"/><path fill="#000" d="M8 8h4v16H8zm7 0h5l1.1 7.5L22.2 8h5v16h-3.4V13.2L22.3 24h-2.4l-1.5-10.8V24H15zm15 0h5.8c3.2 0 4.7 1.4 4.7 4.4v7.2c0 3-1.5 4.4-4.7 4.4H30zm4 3v10c1.6 0 2-.4 2-1.6v-6.8c0-1.2-.4-1.6-2-1.6zm9-3h3.9v5.2c.6-.7 1.4-1.1 2.4-1.1 2 0 2.9 1.2 2.9 3.4v4.3c0 2.3-.9 3.6-2.9 3.6-1 0-1.9-.5-2.5-1.3l-.2 1H43zm4.3 6.4c-.4 0-.5.3-.5.8v5.4c0 .5.1.8.5.8s.5-.3.5-.8v-5.4c0-.5-.1-.8-.5-.8z"/></svg>Full filmography on IMDb →</a>
+    </div>
   </section>
 
   <section class="about" id="about">
@@ -183,14 +207,6 @@ footer{padding:20px 104px 50px;font-size:14px}
     <p class="contact" id="contact">Contact: <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> &nbsp;·&nbsp; <a href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener">IMDb</a></p>
   </section>
 
-  <section class="news">
-    <h3>Keep Up with Latest Work</h3>
-    <form id="sub">
-      <input type="email" id="email" required placeholder="Enter your email here" aria-label="Email">
-      <button type="submit">Subscribe Now</button>
-    </form>
-    <div class="ok" id="ok" role="status"></div>
-  </section>
 </main>
 
 <footer>© <span id="yr">2026</span></footer>
@@ -228,12 +244,6 @@ footer{padding:20px 104px 50px;font-size:14px}
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') menu.classList.remove('open'); });
 
-  document.getElementById('sub').addEventListener('submit', e => {
-    e.preventDefault();
-    const em = document.getElementById('email').value.trim();
-    location.href = 'mailto:hola@isaacazares.com?subject=' + encodeURIComponent('Subscribe') + '&body=' + encodeURIComponent(em);
-    document.getElementById('ok').textContent = 'Thanks for submitting!';
-  });
   document.getElementById('yr').textContent = new Date().getFullYear();
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 }
