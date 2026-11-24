@@ -7,6 +7,7 @@
 <meta name="description" content="Isaac Cázares — Filmmaker and Storyteller. Publicidad, fotografía, cine y documental desde San Luis Potosí, México.">
 <meta property="og:title" content="Isaac Cázares | Filmmaker and Storyteller">
 <meta property="og:image" content="https://i.vimeocdn.com/video/2054079960-913843523a4d4318d2846956b3942b4341ad143343f185a00b478a7580e6aee4-d_1920x1080">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2750%27/%3E%3Crect x=%2739.2%27 y=%2740.3%27 width=%274.1%27 height=%2759.7%27 fill=%27%23fff%27/%3E%3Cpath d=%27M58.6 43.2A5.2 5.2 0 1 0 58.6 50%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%274.1%27/%3E%3Crect x=%2750.2%27 y=%2753.4%27 width=%278.3%27 height=%2746.6%27 fill=%27%23999%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;800&display=swap" rel="stylesheet">
 <style>
@@ -20,8 +21,11 @@ a{color:inherit}
 
 /* Header */
 header{position:fixed;top:0;left:0;right:0;height:60px;background:#000;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 66px}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font:800 14px var(--heavy)}
-.logo span.dot{width:34px;height:34px;border-radius:50%;background:#fff;display:block}
+/* Logo: círculo negro, IC blanco, columnas bajo las letras con el reel en B/N */
+.logo{position:relative;display:block;width:46px;height:46px;border-radius:50%;background:#000;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.logo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.6) brightness(1.15);clip-path:polygon(39.2% 52.8%,43.3% 52.8%,43.3% 100%,50.2% 100%,50.2% 53.4%,58.5% 53.4%,58.5% 100%,39.2% 100%)}
+.logo svg{position:absolute;inset:0;width:100%;height:100%}
+.logo:hover video{filter:grayscale(1) contrast(1.6) brightness(1.5)}
 .burger{width:44px;height:44px;background:none;border:0;cursor:pointer;display:grid;place-items:center;padding:0}
 .burger i{display:block;height:2px;background:#fff;margin:5px 0 5px auto}
 .burger i:nth-child(1){width:26px}.burger i:nth-child(2){width:18px}.burger i:nth-child(3){width:26px}
@@ -75,12 +79,13 @@ nav.menu .close{position:absolute;top:8px;right:30px;font:300 40px var(--light);
 
 /* About */
 .about{position:relative;padding:70px 0 40px}
-.about .photo{position:absolute;top:220px;left:24%;right:0;height:589px;background:url("assets/about.jpg") center/cover;filter:grayscale(1)}
-.about .body{position:relative;padding:60px 0 0 107px;max-width:760px}
+.about .stage{position:relative;margin-top:60px;min-height:740px}
+.about .photo{position:absolute;top:118px;left:0;right:0;height:589px;background:url("assets/about.jpg") center/cover}
+.about .body{position:relative;padding:50px 0 0 107px;max-width:760px}
 .about h2{font:800 30px var(--heavy);margin:0 0 14px}
 .about h3{font:800 21px/1.5 var(--heavy);text-decoration:underline;margin:0 0 70px;max-width:533px}
 .about p{max-width:384px;margin:0 0 25px}
-.about .contact{padding:110px 0 0 107px;margin:0;max-width:none;position:relative}
+.about .contact{padding:40px 0 0 107px;margin:0;max-width:none;position:relative}
 .contact a{text-decoration:none}
 
 /* Newsletter */
@@ -102,8 +107,10 @@ footer{padding:20px 104px 50px;font-size:14px}
  .player,.strip{margin-left:16px;margin-right:50px}
  .player{margin-top:50px}
  .thumb{flex-basis:220px;height:128px}
- .about .photo{position:relative;top:auto;left:0;height:300px;margin:40px 0 0}
- .about .body{padding:30px 50px 0 24px}
+ .about .stage{min-height:0;margin-top:30px}
+ .about .photo{top:70px;bottom:-20px;height:auto}
+ .about .photo::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+ .about .body{padding:20px 50px 0 24px}
  .about h3{margin-bottom:30px}
  .about .contact{padding:40px 50px 0 24px}
  .news{padding:60px 50px 30px 24px}
@@ -116,7 +123,10 @@ footer{padding:20px 104px 50px;font-size:14px}
 <body>
 
 <header>
-  <a class="logo" href="#top" aria-label="Isaac Cázares, inicio">IC <span class="dot"></span></a>
+  <a class="logo" href="#top" aria-label="Isaac Cázares, inicio">
+    <video id="logoVid" autoplay muted loop playsinline poster="assets/hero-poster.jpg" src="assets/hero.mp4"></video>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="39.2" y="40.3" width="4.1" height="12.5" fill="#fff"/><path d="M58.6 43.2A5.2 5.2 0 1 0 58.6 50" fill="none" stroke="#fff" stroke-width="4.1"/></svg>
+  </a>
   <button class="burger" id="burger" aria-label="Abrir menú"><span><i></i><i></i><i></i></span></button>
 </header>
 
@@ -161,12 +171,14 @@ footer{padding:20px 104px 50px;font-size:14px}
 
   <section class="about" id="about">
     <div class="label">About</div>
+    <div class="stage">
     <div class="photo" aria-hidden="true"></div>
     <div class="body">
       <h2>Isaac Cázares</h2>
       <h3>Isaac is a Filmmaker and Visual Storyteller from San Luis Potosí, Mexico, he graduated from Communications and Digital Media at Tecnológico de Monterrey in Mexico City.</h3>
       <p>Over the past years he has been working on international projects, telling compelling stories and producing high quality content, featuring brands such as Vice, Vice News, Netflix, National Geographic, NFL, among others.</p>
       <p>Isaac is available for worldwide projects in order to fit your brand’s specific needs. Send him an email to <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> and he’ll get in touch with you as soon as possible!</p>
+    </div>
     </div>
     <p class="contact" id="contact">Contact: <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> &nbsp;·&nbsp; <a href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener">IMDb</a></p>
   </section>
@@ -223,6 +235,7 @@ footer{padding:20px 104px 50px;font-size:14px}
     document.getElementById('ok').textContent = 'Thanks for submitting!';
   });
   document.getElementById('yr').textContent = new Date().getFullYear();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 }
 </script>
 </body>
