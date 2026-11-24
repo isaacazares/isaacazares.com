@@ -82,11 +82,19 @@ nav.menu .close{position:absolute;top:8px;right:30px;font:300 40px var(--light);
 .credits .label{padding-left:6px;margin-right:0}
 .clist{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
 .clist li{border-top:1px solid rgba(255,255,255,.28)}
-.clist a{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:16px 4px 18px;text-decoration:none;transition:background .2s}
+.clist a{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:start;gap:14px;padding:16px 4px 18px;text-decoration:none;transition:background .2s}
 .clist a:hover{background:rgba(255,255,255,.07)}
 .clist .yr{font-size:14px;color:#c7c7c7;padding-top:4px}
 .clist .t{font:800 21px/1.25 var(--heavy)}
 .clist .r{display:block;font-size:14px;color:#c7c7c7;margin-top:4px}
+.meta{display:flex;flex-direction:column;align-items:flex-end;gap:7px;padding-top:3px}
+.pf{display:inline-flex;align-items:center;gap:4px;height:20px;padding:0 7px;font:800 11px/1 var(--heavy);letter-spacing:.06em;white-space:nowrap;border-radius:3px}
+.pf.nf{background:#000;color:#e50914;letter-spacing:.12em;box-shadow:inset 0 0 0 1px rgba(229,9,20,.5)}
+.pf.vice{background:#fff;color:#000;font-size:12px;letter-spacing:.02em}
+.pf.uni{background:#fff;color:#1d2c6b;letter-spacing:0;text-transform:lowercase;font-size:12px}
+.pf.fest{background:none;color:#e9d7a5;box-shadow:inset 0 0 0 1px rgba(233,215,165,.55);font-weight:300;letter-spacing:.03em;padding:0 8px 0 5px}
+.pf .lau{width:15px;height:15px}
+.rt{font-size:13px;white-space:nowrap;color:#fff}.rt b{color:#f5c518;font-weight:400}
 .imdb-all{display:inline-flex;align-items:center;gap:12px;margin-top:34px;font-size:16px;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:4px}
 .imdb-all:hover{opacity:.7}
 .imdb-all svg{width:42px;height:21px}
@@ -178,16 +186,16 @@ footer{padding:20px 104px 50px;font-size:14px}
     <div class="credits" id="credits">
       <div class="label">Credits</div>
       <ol class="clist">
-        <li><a href="https://www.imdb.com/title/tt36150990/" target="_blank" rel="noopener"><span class="yr">2025</span><span><span class="t">Garnachas: Glorious Street Food!</span><span class="r">Editor · Miniseries</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt28235034/" target="_blank" rel="noopener"><span class="yr">2025</span><span><span class="t">Juan Gabriel: Debo, puedo y quiero</span><span class="r">Post-production Assistant · Series</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt28657881/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">La oscuridad de La Luz del Mundo</span><span class="r">Assistant Editor · Film</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt30222235/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">Divo o Muerto</span><span class="r">Editor · Series</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt33463488/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">The Place Man</span><span class="r">Editor · Short</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt21448384/" target="_blank" rel="noopener"><span class="yr">2022</span><span><span class="t">Club América vs. Club América</span><span class="r">Assistant Editor · Series</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt16539880/" target="_blank" rel="noopener"><span class="yr">2022</span><span><span class="t">La Divina Gula</span><span class="r">Second Assistant Editor · Series</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt13991372/" target="_blank" rel="noopener"><span class="yr">2021</span><span><span class="t">Los Plebes</span><span class="r">Additional Editor · Film</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt13206564/" target="_blank" rel="noopener"><span class="yr">2020</span><span><span class="t">Las tres muertes de Marisela Escobedo</span><span class="r">Additional Assistant Editor · Film</span></span></a></li>
-        <li><a href="https://www.imdb.com/title/tt12571604/" target="_blank" rel="noopener"><span class="yr">2018</span><span><span class="t">Explorer Investigation</span><span class="r">Assistant Editor · Series</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt36150990/" target="_blank" rel="noopener"><span class="yr">2025</span><span><span class="t">Garnachas: Glorious Street Food!</span><span class="r">Editor · Miniseries</span></span><span class="meta"><span class="pf nf" title="Netflix">NETFLIX</span><span class="rt" title="IMDb rating"><b>★</b> 6.5</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt28235034/" target="_blank" rel="noopener"><span class="yr">2025</span><span><span class="t">Juan Gabriel: Debo, puedo y quiero</span><span class="r">Post-production Assistant · Series</span></span><span class="meta"><span class="pf nf" title="Netflix">NETFLIX</span><span class="rt" title="IMDb rating"><b>★</b> 8.2</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt28657881/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">La oscuridad de La Luz del Mundo</span><span class="r">Assistant Editor · Film</span></span><span class="meta"><span class="pf nf" title="Netflix">NETFLIX</span><span class="rt" title="IMDb rating"><b>★</b> 6.9</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt30222235/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">Divo o Muerto</span><span class="r">Editor · Series</span></span><span class="meta"><span class="pf uni" title="Unicable">unicable</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt33463488/" target="_blank" rel="noopener"><span class="yr">2023</span><span><span class="t">The Place Man</span><span class="r">Editor · Short</span></span><span class="meta"><span class="pf fest" title="Festivals"><svg class="lau" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 20c-3-1.6-4.8-4.6-4.8-8.2 0-2.4.8-4.6 2.2-6.4M16.5 20c3-1.6 4.8-4.6 4.8-8.2 0-2.4-.8-4.6-2.2-6.4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4.2 16.6l-2 .2m3.3 1.5l-1.4 1.6M3 13.3l-2-.6M3 10l-1.8-1.1M4.1 6.9l-1.3-1.6M19.8 16.6l2 .2m-3.3 1.5l1.4 1.6M21 13.3l2-.6M21 10l1.8-1.1M19.9 6.9l1.3-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Festivals</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt21448384/" target="_blank" rel="noopener"><span class="yr">2022</span><span><span class="t">Club América vs. Club América</span><span class="r">Assistant Editor · Series</span></span><span class="meta"><span class="pf nf" title="Netflix">NETFLIX</span><span class="rt" title="IMDb rating"><b>★</b> 7.4</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt16539880/" target="_blank" rel="noopener"><span class="yr">2022</span><span><span class="t">La Divina Gula</span><span class="r">Second Assistant Editor · Series</span></span><span class="meta"><span class="pf nf" title="Netflix">NETFLIX</span><span class="rt" title="IMDb rating"><b>★</b> 6.3</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt13991372/" target="_blank" rel="noopener"><span class="yr">2021</span><span><span class="t">Los Plebes</span><span class="r">Additional Editor · Film</span></span><span class="meta"><span class="pf fest" title="FICUNAM · Torino"><svg class="lau" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 20c-3-1.6-4.8-4.6-4.8-8.2 0-2.4.8-4.6 2.2-6.4M16.5 20c3-1.6 4.8-4.6 4.8-8.2 0-2.4-.8-4.6-2.2-6.4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4.2 16.6l-2 .2m3.3 1.5l-1.4 1.6M3 13.3l-2-.6M3 10l-1.8-1.1M4.1 6.9l-1.3-1.6M19.8 16.6l2 .2m-3.3 1.5l1.4 1.6M21 13.3l2-.6M21 10l1.8-1.1M19.9 6.9l1.3-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>FICUNAM · Torino</span><span class="rt" title="IMDb rating"><b>★</b> 6.2</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt13206564/" target="_blank" rel="noopener"><span class="yr">2020</span><span><span class="t">Las tres muertes de Marisela Escobedo</span><span class="r">Additional Assistant Editor · Film</span></span><span class="meta"><span class="pf nf" title="Netflix">NETFLIX</span><span class="rt" title="IMDb rating"><b>★</b> 8.1</span></span></a></li>
+        <li><a href="https://www.imdb.com/title/tt12571604/" target="_blank" rel="noopener"><span class="yr">2018</span><span><span class="t">Explorer Investigation</span><span class="r">Assistant Editor · Series</span></span><span class="meta"><span class="pf vice" title="VICE">VICE</span></span></a></li>
       </ol>
       <a class="imdb-all" href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener"><svg viewBox="0 0 64 32" aria-hidden="true"><rect width="64" height="32" rx="4" fill="#F5C518"/><path fill="#000" d="M8 8h4v16H8zm7 0h5l1.1 7.5L22.2 8h5v16h-3.4V13.2L22.3 24h-2.4l-1.5-10.8V24H15zm15 0h5.8c3.2 0 4.7 1.4 4.7 4.4v7.2c0 3-1.5 4.4-4.7 4.4H30zm4 3v10c1.6 0 2-.4 2-1.6v-6.8c0-1.2-.4-1.6-2-1.6zm9-3h3.9v5.2c.6-.7 1.4-1.1 2.4-1.1 2 0 2.9 1.2 2.9 3.4v4.3c0 2.3-.9 3.6-2.9 3.6-1 0-1.9-.5-2.5-1.3l-.2 1H43zm4.3 6.4c-.4 0-.5.3-.5.8v5.4c0 .5.1.8.5.8s.5-.3.5-.8v-5.4c0-.5-.1-.8-.5-.8z"/></svg>Full filmography on IMDb →</a>
     </div>
