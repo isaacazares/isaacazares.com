@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Isaac Cázares | Producción de Videos</title>
-<meta name="description" content="Isaac Cázares — Filmmaker and Storyteller. Publicidad, fotografía, cine y documental desde San Luis Potosí, México.">
-<meta property="og:title" content="Isaac Cázares | Filmmaker and Storyteller">
+<title>Isaac Cázares | Editor &amp; Filmmaker</title>
+<meta name="description" content="Editor &amp; Filmmaker — documentary series, branded content and advertising for Netflix, ViX, VICE and more.">
+<meta property="og:description" content="Editor &amp; Filmmaker — documentary series, branded content and advertising for Netflix, ViX, VICE and more.">
+<meta property="og:title" content="Isaac Cázares">
 <meta property="og:image" content="https://www.isaacazares.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -107,6 +108,15 @@ nav.menu .close{position:absolute;top:8px;right:30px;font:300 40px var(--light);
 .imdb-all:hover{opacity:.7}
 .imdb-all svg{width:42px;height:21px}
 
+/* Services */
+.services{padding:90px 0 20px}
+.slist{list-style:none;margin:40px 120px 0 107px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 56px}
+.slist li{border-top:1px solid rgba(255,255,255,.28);padding-top:16px}
+.slist h3{font:800 21px/1.25 var(--heavy);margin:0 0 8px}
+.slist p{margin:0;font-size:16px;color:#c7c7c7;max-width:440px}
+.talk{display:inline-block;margin:40px 0 0 107px;font-size:18px;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:4px}
+.talk:hover{opacity:.7}
+
 /* About */
 .about{position:relative;padding:70px 0 40px}
 .about .stage{position:relative;margin-top:60px;min-height:740px}
@@ -132,6 +142,8 @@ footer{padding:20px 104px 50px;font-size:14px}
  .credits{margin:60px 50px 0 16px}
  .clist{grid-template-columns:minmax(0,1fr)}
  .clist .t{font-size:18px}
+ .slist{margin:30px 50px 0 24px;grid-template-columns:minmax(0,1fr);gap:24px}
+ .talk{margin-left:24px}
  .about .stage{min-height:0;margin-top:30px}
  .about .photo{top:70px;bottom:-20px;height:auto}
  .about .photo::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
@@ -158,6 +170,7 @@ footer{padding:20px 104px 50px;font-size:14px}
   <a href="#top">Home</a>
   <a href="#featuredwork">Featured Work</a>
   <a href="#credits">Credits</a>
+  <a href="#services">Services</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -172,7 +185,7 @@ footer{padding:20px 104px 50px;font-size:14px}
   <section class="hero">
     <video class="bgv" autoplay muted loop playsinline poster="assets/hero-poster.jpg" src="assets/hero.mp4"></video>
     <div class="txt">
-      <h1>Isaac Cázares<br>Filmmaker and Storyteller</h1>
+      <h1>Isaac Cázares<br>Editor &amp; Filmmaker</h1>
       <a href="#featuredwork">Watch Showreel <svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="#fff" stroke-width="1.6"><path d="M0 7h20M14 1l6 6-6 6"/></svg></a>
     </div>
   </section>
@@ -209,15 +222,27 @@ footer{padding:20px 104px 50px;font-size:14px}
     </div>
   </section>
 
+  <section class="services" id="services">
+    <div class="label">Services</div>
+    <ul class="slist">
+        <li><h3>Editorial</h3><p>Editing and assistant editing for documentary series, branded content and advertising.</p></li>
+        <li><h3>Editorial workflow</h3><p>Design and supervision of editorial pipelines for multi-episode documentaries — Premiere Productions, remote editing, organized media — so editors can focus on the story.</p></li>
+        <li><h3>Direction &amp; production</h3><p>Commercials and branded content, from pitch and script to shoot and delivery.</p></li>
+        <li><h3>Documentary photography</h3><p>Stills for productions, brands and editorial stories.</p></li>
+    </ul>
+    <a class="talk" href="mailto:hola@isaacazares.com">Let’s talk → hola@isaacazares.com</a>
+  </section>
+
   <section class="about" id="about">
     <div class="label">About</div>
     <div class="stage">
     <div class="photo" aria-hidden="true"></div>
     <div class="body">
       <h2>Isaac Cázares</h2>
-      <h3>Isaac is a Filmmaker and Visual Storyteller from San Luis Potosí, Mexico, he graduated from Communications and Digital Media at Tecnológico de Monterrey in Mexico City.</h3>
-      <p>Over the past years he has been working on international projects, telling compelling stories and producing high quality content, featuring brands such as Vice, Vice News, Netflix, National Geographic, NFL, among others.</p>
-      <p>Isaac is available for worldwide projects in order to fit your brand’s specific needs. Send him an email to <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> and he’ll get in touch with you as soon as possible!</p>
+      <h3>Editor and filmmaker working across documentary series, branded content and advertising since 2016.</h3>
+      <p>His work includes projects for Netflix, ViX, VICE, Prime Video, HBO Max and Chanel. Productions he has been part of have screened at SXSW and been recognized with Mexico’s Premio Ariel.</p>
+      <p>Beyond the edit, he has directed commercials, run his own production company, shot documentary photography and taken projects from the first pitch to final delivery, with teams working remotely across Latin America, the US and Europe.</p>
+      <p>Available for projects anywhere. Write to <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a>.</p>
     </div>
     </div>
     <p class="contact" id="contact">Contact: <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> &nbsp;·&nbsp; <a href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener">IMDb</a></p>
