@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaac Cázares | Producción de Videos</title>
+<meta name="description" content="Isaac Cázares — Filmmaker and Storyteller. Publicidad, fotografía, cine y documental desde San Luis Potosí, México.">
+<meta property="og:title" content="Isaac Cázares | Filmmaker and Storyteller">
+<meta property="og:image" content="https://i.vimeocdn.com/video/2054079960-913843523a4d4318d2846956b3942b4341ad143343f185a00b478a7580e6aee4-d_1920x1080">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;800&display=swap" rel="stylesheet">
+<style>
+/* Réplica de isaacazares.com (Wix) — fondo negro, Avenir Light/Heavy, blanco */
+:root{--light:"Avenir Next","Avenir","Nunito Sans",sans-serif;--heavy:"Avenir Next","Avenir","Nunito Sans",sans-serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:#000;color:#fff;font:300 18px/1.5 var(--light);overflow-x:clip}
+a{color:inherit}
+.heavy{font-family:var(--heavy);font-weight:800}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;height:60px;background:#000;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 66px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font:800 14px var(--heavy)}
+.logo span.dot{width:34px;height:34px;border-radius:50%;background:#fff;display:block}
+.burger{width:44px;height:44px;background:none;border:0;cursor:pointer;display:grid;place-items:center;padding:0}
+.burger i{display:block;height:2px;background:#fff;margin:5px 0 5px auto}
+.burger i:nth-child(1){width:26px}.burger i:nth-child(2){width:18px}.burger i:nth-child(3){width:26px}
+nav.menu{position:fixed;inset:0;background:#000;z-index:30;display:none;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+nav.menu.open{display:flex}
+nav.menu a{font:800 34px var(--heavy);text-decoration:none}
+nav.menu a:hover{opacity:.6}
+nav.menu .close{position:absolute;top:8px;right:30px;font:300 40px var(--light);background:none;border:0;color:#fff;cursor:pointer}
+
+/* Social fijo */
+.social{position:fixed;right:30px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:15}
+.social a{display:block;width:18px;height:18px;opacity:.95}
+.social a:hover{opacity:.6}
+.social svg{width:18px;height:18px;fill:#fff;display:block}
+.social .imdb{width:30px;height:16px;margin-left:-6px}
+.social .imdb svg{width:30px;height:16px}
+
+/* Hero */
+.hero{position:relative;height:max(100svh,560px);max-height:960px;display:flex;align-items:flex-end;overflow:hidden}
+.bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero .txt{position:relative;z-index:1;padding:0 88px 18vh}
+.hero h1{font:800 clamp(34px,5.9vw,60px)/1.12 var(--heavy);margin:0 0 26px}
+.hero a{font:300 21px var(--light);text-decoration:none;display:inline-flex;align-items:center;gap:14px}
+.hero a:hover{opacity:.7}
+
+/* Línea con etiqueta */
+.label{display:flex;align-items:center;gap:14px;font:300 18px var(--light);padding:0 0 0 48px;margin-right:110px}
+.label::before{content:"";width:40px;height:1px;background:#fff;flex:none}
+.label::after{content:"";height:1px;background:#fff;flex:1}
+
+/* Featured Work */
+.featured{position:relative;overflow:hidden;padding:70px 0 110px}
+.featured>*:not(.bgv){position:relative;z-index:1}
+.player{margin:96px 120px 0 42px;aspect-ratio:16/9;background:#111 center/cover;position:relative;display:grid;place-items:center;text-align:center}
+.player::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25)}
+.player .cover{position:relative}
+.player h2{font:800 clamp(30px,5vw,50px)/1.1 var(--heavy);margin:0 0 18px}
+.play{background:#fff;color:#000;border:0;font:300 14px var(--light);padding:9px 22px;display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+.play:hover{background:#ddd}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.strip{margin:28px 120px 0 42px;position:relative}
+.thumbs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 10px}
+.thumbs::-webkit-scrollbar{display:none}
+.thumb{flex:0 0 272px;height:158px;scroll-snap-align:start;background:#222 center/cover;position:relative;cursor:pointer;border:0;padding:0;text-align:left;color:#fff}
+.thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,0) 55%)}
+.thumb:hover::before,.thumb.on::before{background:rgba(0,0,0,.45)}
+.thumb h3{position:relative;font:300 14px/1.3 var(--light);margin:10px 14px;letter-spacing:.02em}
+.thumb .dur{position:absolute;right:10px;bottom:8px;font-size:12px;background:rgba(0,0,0,.6);padding:1px 6px}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:20px;cursor:pointer;z-index:2}
+.arrow.l{left:-12px}.arrow.r{right:-12px}
+
+/* About */
+.about{position:relative;padding:70px 0 40px}
+.about .photo{position:absolute;top:220px;left:24%;right:0;height:589px;background:url("assets/about.jpg") center/cover;filter:grayscale(1)}
+.about .body{position:relative;padding:60px 0 0 107px;max-width:760px}
+.about h2{font:800 30px var(--heavy);margin:0 0 14px}
+.about h3{font:800 21px/1.5 var(--heavy);text-decoration:underline;margin:0 0 70px;max-width:533px}
+.about p{max-width:384px;margin:0 0 25px}
+.about .contact{padding:110px 0 0 107px;margin:0;max-width:none;position:relative}
+.contact a{text-decoration:none}
+
+/* Newsletter */
+.news{padding:70px 104px 40px}
+.news h3{font:800 21px var(--heavy);text-decoration:underline;margin:0 0 18px}
+.news form{display:flex;gap:16px;align-items:flex-end;max-width:840px}
+.news input{flex:1;background:none;border:0;border-bottom:1px solid #fff;color:#fff;font:300 16px var(--light);padding:10px 4px}
+.news input::placeholder{color:#c7c7c7}
+.news button{background:#fff;color:#000;border:0;font:300 14px var(--light);padding:9px 20px;cursor:pointer;white-space:nowrap}
+.news .ok{font-size:14px;margin-top:12px;min-height:20px}
+footer{padding:20px 104px 50px;font-size:14px}
+
+@media(max-width:760px){
+ header{padding:0 14px 0 20px}
+ .social{right:12px}
+ .hero .txt{padding:0 24px 14vh}
+ .hero h1{font-size:34px}
+ .label{padding-left:20px;margin-right:50px}
+ .player,.strip{margin-left:16px;margin-right:50px}
+ .player{margin-top:50px}
+ .thumb{flex-basis:220px;height:128px}
+ .about .photo{position:relative;top:auto;left:0;height:300px;margin:40px 0 0}
+ .about .body{padding:30px 50px 0 24px}
+ .about h3{margin-bottom:30px}
+ .about .contact{padding:40px 50px 0 24px}
+ .news{padding:60px 50px 30px 24px}
+ .news form{flex-direction:column;align-items:stretch}
+ footer{padding:20px 24px 40px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#top" aria-label="Isaac Cázares, inicio">IC <span class="dot"></span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú"><span><i></i><i></i><i></i></span></button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menú">
+  <button class="close" id="close" aria-label="Cerrar menú">×</button>
+  <a href="#top">Home</a>
+  <a href="#featuredwork">Featured Work</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="social">
+  <a href="https://vimeo.com/isaacazares" target="_blank" rel="noopener" aria-label="Vimeo"><svg viewBox="0 0 24 24"><path d="M22.4 7.2c-.1 2-1.5 4.8-4.3 8.4-2.8 3.7-5.2 5.5-7.2 5.5-1.2 0-2.2-1.1-3.1-3.4L6.1 11.6c-.6-2.3-1.3-3.4-2-3.4-.2 0-.8.4-1.8 1.1L1.2 8C2.3 7 3.4 6 4.5 5c1.5-1.3 2.6-2 3.4-2 1.8-.2 2.9 1 3.3 3.7.4 2.9.7 4.6.9 5.3.5 2.3 1.1 3.4 1.7 3.4.5 0 1.2-.8 2.1-2.3.9-1.5 1.5-2.6 1.5-3.4.1-1.3-.4-1.9-1.5-1.9-.5 0-1.1.1-1.6.4 1.1-3.5 3.1-5.2 6.1-5.1 2.2.1 3.2 1.5 3 4.1z"/></svg></a>
+  <a href="https://www.instagram.com/isaacazares" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+  <a class="imdb" href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener" aria-label="IMDb"><svg viewBox="0 0 64 32"><rect width="64" height="32" rx="4" fill="#fff"/><path fill="#000" d="M8 8h4v16H8zm7 0h5l1.1 7.5L22.2 8h5v16h-3.4V13.2L22.3 24h-2.4l-1.5-10.8V24H15zm15 0h5.8c3.2 0 4.7 1.4 4.7 4.4v7.2c0 3-1.5 4.4-4.7 4.4H30zm4 3v10c1.6 0 2-.4 2-1.6v-6.8c0-1.2-.4-1.6-2-1.6zm9-3h3.9v5.2c.6-.7 1.4-1.1 2.4-1.1 2 0 2.9 1.2 2.9 3.4v4.3c0 2.3-.9 3.6-2.9 3.6-1 0-1.9-.5-2.5-1.3l-.2 1H43zm4.3 6.4c-.4 0-.5.3-.5.8v5.4c0 .5.1.8.5.8s.5-.3.5-.8v-5.4c0-.5-.1-.8-.5-.8z"/></svg></a>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <video class="bgv" autoplay muted loop playsinline poster="assets/hero-poster.jpg" src="assets/hero.mp4"></video>
+    <div class="txt">
+      <h1>Isaac Cázares<br>Filmmaker and Storyteller</h1>
+      <a href="#featuredwork">Watch Showreel <svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="#fff" stroke-width="1.6"><path d="M0 7h20M14 1l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <section class="featured" id="featuredwork">
+    <video class="bgv" autoplay muted loop playsinline src="assets/featured-bg.mp4"></video>
+    <div class="label">Featured Work</div>
+    <div class="player" id="player" style="background-image:url('https://i.vimeocdn.com/video/1068499723-ead4e6657398d10c6634e66381950b62fde5fe9b23f49d20746618769e385aa1-d_1920x1080')">
+      <div class="cover">
+        <h2>Featured Work</h2>
+        <button class="play" id="playMain"><svg width="10" height="12" viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg>Reproducir video</button>
+      </div>
+    </div>
+    <div class="strip">
+      <button class="arrow l" id="prev" aria-label="Anterior">‹</button>
+      <div class="thumbs" id="thumbs"></div>
+      <button class="arrow r" id="next" aria-label="Siguiente">›</button>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="label">About</div>
+    <div class="photo" aria-hidden="true"></div>
+    <div class="body">
+      <h2>Isaac Cázares</h2>
+      <h3>Isaac is a Filmmaker and Visual Storyteller from San Luis Potosí, Mexico, he graduated from Communications and Digital Media at Tecnológico de Monterrey in Mexico City.</h3>
+      <p>Over the past years he has been working on international projects, telling compelling stories and producing high quality content, featuring brands such as Vice, Vice News, Netflix, National Geographic, NFL, among others.</p>
+      <p>Isaac is available for worldwide projects in order to fit your brand’s specific needs. Send him an email to <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> and he’ll get in touch with you as soon as possible!</p>
+    </div>
+    <p class="contact" id="contact">Contact: <a href="mailto:hola@isaacazares.com">hola@isaacazares.com</a> &nbsp;·&nbsp; <a href="https://www.imdb.com/es-es/name/nm13869311/" target="_blank" rel="noopener">IMDb</a></p>
+  </section>
+
+  <section class="news">
+    <h3>Keep Up with Latest Work</h3>
+    <form id="sub">
+      <input type="email" id="email" required placeholder="Enter your email here" aria-label="Email">
+      <button type="submit">Subscribe Now</button>
+    </form>
+    <div class="ok" id="ok" role="status"></div>
+  </section>
+</main>
+
+<footer>© <span id="yr">2026</span></footer>
+
+<script>
+{
+  // Playlist: mismo orden que en Wix. Para agregar un proyecto, añade una línea aquí.
+  const videos = [
+    {t:"REEL 2025", id:"1114972514", d:"01:09", img:"https://i.vimeocdn.com/video/2054079960-913843523a4d4318d2846956b3942b4341ad143343f185a00b478a7580e6aee4-d_1920x1080?&r=pad&region=us"},
+    {t:"MUNCHIES - Chefs Night Out In Mexico City", id:"507225951", img:"https://i.vimeocdn.com/video/1049824839-9cc0d2bbba483dab6f1e98cf18bbc41ad1c24a80ddc56b30ba84f39a9fd279d0-d_1920x1080"},
+    {t:"NOISEY NIÑOS ENTREVISTAN A J BALVIN", id:"509891791", img:"https://i.vimeocdn.com/video/1055535214-4e7ed2c775862a431c89bf2fed8a4d756f8609d234060e24a831bf1a55c3f01c-d_1920x1080"},
+    {t:"BUCHANAN'S ARENA MÉXICO", id:"509881854", img:"https://i.vimeocdn.com/video/1055517157-62b31bfdbb355b3d50fa019cf4c310bc876fc741f69b4b7e5e03c3996a4e9e0b-d_1920x1080"},
+    {t:"NFL FOOTPRINT ISAAC ALARCON", id:"507236004", img:"https://i.vimeocdn.com/video/1049843408-afd3ecedf69d7518c8045e45055f11cf92e2d8811e92f5869f6878fa9121849e-d_1920x1080"},
+    {t:"VIRTUE // CORONA WORLD WIDE // THIS IS BREWING - BREWING PROCESS", id:"507282609", img:"https://i.vimeocdn.com/video/1049931448-7a31ca82bf467d71fba1cc30e54daa9e3ba933bb2d23a95b1a4113d30493edd6-d_1920x1080"}
+  ];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const thumbs = document.getElementById('thumbs');
+  const player = document.getElementById('player');
+  thumbs.innerHTML = videos.map((v,i) => '<button class="thumb" data-i="' + i + '" style="background-image:url(\'' + esc(v.img) + '\')"><h3>' + esc(v.t) + '</h3>' + (v.d ? '<span class="dur">' + esc(v.d) + '</span>' : '') + '</button>').join('');
+  const play = i => {
+    const v = videos[i];
+    player.innerHTML = '<iframe src="https://player.vimeo.com/video/' + encodeURIComponent(v.id) + '?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="' + esc(v.t) + '"></iframe>';
+    thumbs.querySelectorAll('.thumb').forEach(b => b.classList.toggle('on', +b.dataset.i === i));
+    player.scrollIntoView({behavior:'smooth', block:'center'});
+  };
+  thumbs.addEventListener('click', e => { const b = e.target.closest('.thumb'); if (b) play(+b.dataset.i); });
+  document.getElementById('playMain').addEventListener('click', () => play(0));
+  const step = () => thumbs.querySelector('.thumb').offsetWidth + 14;
+  document.getElementById('prev').addEventListener('click', () => thumbs.scrollBy({left:-step(), behavior:'smooth'}));
+  document.getElementById('next').addEventListener('click', () => thumbs.scrollBy({left:step(), behavior:'smooth'}));
+
+  const menu = document.getElementById('menu');
+  document.getElementById('burger').addEventListener('click', () => menu.classList.add('open'));
+  document.getElementById('close').addEventListener('click', () => menu.classList.remove('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') menu.classList.remove('open'); });
+
+  document.getElementById('sub').addEventListener('submit', e => {
+    e.preventDefault();
+    const em = document.getElementById('email').value.trim();
+    location.href = 'mailto:hola@isaacazares.com?subject=' + encodeURIComponent('Subscribe') + '&body=' + encodeURIComponent(em);
+    document.getElementById('ok').textContent = 'Thanks for submitting!';
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+}
+</script>
+</body>
+</html>
